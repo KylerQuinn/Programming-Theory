@@ -355,6 +355,7 @@
 "Assets/Scripts/DestroyOutOfBounds.cs"
 "Assets/Scripts/FallingSurface.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Menu.cs"
 "Assets/Scripts/OrdinarySurface.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Surface.cs"

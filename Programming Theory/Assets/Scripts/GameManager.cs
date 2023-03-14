@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> surfaces = new List<GameObject>();
     [SerializeField] private GameObject leftBorder;
     [SerializeField] private GameObject rightBorder;
+    [SerializeField] private GameObject gameoverScreen;
 
-    private float secondsTilCreation = 2;
+    private float secondsTilCreation = 2.5f;
     private const float newSurfaceY = 9;
     
     public float moveDownSpeed { get; } = 4.5f;
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CreateSurface()
     {
-        int previousIndex = surfaces.Count;
+        int previousIndex = surfaces.Count - 1;
         int index = previousIndex;
 
         while (isGameActive)
@@ -50,5 +52,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
+        gameoverScreen.SetActive(true);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
