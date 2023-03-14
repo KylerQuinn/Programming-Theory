@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
     private const float jumpForce = 10;
-    private const float moveForce = 2;
+    private const float moveForce = 10;
 
     private bool isOnGround = false;
 
@@ -21,20 +21,22 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             PlayerJump();
         }
+    }
 
+    void FixedUpdate()
+    {
         HorizontalMovement();
     }
 
     private void HorizontalMovement()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(horizontalInput * moveForce * Vector3.right);
     }
 

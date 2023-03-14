@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject rightBorder;
     [SerializeField] private GameObject gameoverScreen;
 
-    private float secondsTilCreation = 2.5f;
+    private float secondsTilCreation = 2f;
     private const float newSurfaceY = 9;
     
-    public float moveDownSpeed { get; } = 4.5f;
+    public float moveDownSpeed { get; } = 1.5f;
     public bool isGameActive { get; private set; } = true;
 
     // Start is called before the first frame update

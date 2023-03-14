@@ -29,7 +29,7 @@ public abstract class Surface : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (gameManager.isGameActive)
         {
@@ -61,6 +61,7 @@ public abstract class Surface : MonoBehaviour
     private void MoveDown()
     {
         surfaceRb.MovePosition(transform.position + Vector3.down * Time.deltaTime * moveDownSpeed);
+        //surfaceRb.velocity = Vector3.down * moveDownSpeed;
     }
 
     private float PositionLag()
